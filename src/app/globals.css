@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 214 100% 98%;
+    --foreground: 224 64% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 64% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 64% 15%;
+    --primary: 225 76% 48%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 214 100% 96%;
+    --secondary-foreground: 225 76% 48%;
+    --muted: 214 32% 91%;
+    --muted-foreground: 224 20% 45%;
+    --accent: 217 91% 60%;
+    --accent-foreground: 224 64% 15%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 225 30% 90%;
+    --input: 225 30% 90%;
+    --ring: 225 76% 48%;
+    --radius: 0.75rem;
+    --chart-1: 225 76% 48%;
+    --chart-2: 217 91% 60%;
+    --chart-3: 224 64% 33%;
+    --chart-4: 221 83% 53%;
+    --chart-5: 214 100% 97%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 224 64% 15%;
+    --sidebar-primary: 225 76% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 214 100% 97%;
+    --sidebar-accent-foreground: 225 76% 48%;
+    --sidebar-border: 225 30% 92%;
+    --sidebar-ring: 225 76% 48%;
+  }
+
+  .dark {
+    --background: 224 64% 5%;
+    --foreground: 0 0% 98%;
+    --card: 224 64% 5%;
+    --card-foreground: 0 0% 98%;
+    --popover: 224 64% 5%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 225 76% 48%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 224 30% 15%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 224 30% 15%;
+    --muted-foreground: 224 20% 65%;
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 224 30% 15%;
+    --input: 224 30% 15%;
+    --ring: 225 76% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* CLASES DE IMPRESIÓN PROFESIONAL */
+.only-print {
+  display: none !important;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 10mm;
+  }
+  
+  html, body {
+    background-color: white !important;
+    color: black !important;
+    width: 210mm;
+    height: auto;
+    font-size: 11pt;
+  }
+
+  /* Forzar visibilidad de colores y fondos en PDF */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  /* Ocultar elementos innecesarios */
+  .print-hidden, 
+  header, 
+  nav, 
+  aside, 
+  .sidebar-inset header,
+  [role="tablist"],
+  .tabs-list,
+  button,
+  .print-none {
+    display: none !important;
+  }
+
+  /* Mostrar sección de reporte consolidado */
+  .only-print {
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  /* Ajustes de diseño para PDF */
+  .break-inside-avoid {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .break-before-page {
+    break-before: page !important;
+    page-break-before: page !important;
+    margin-top: 2rem !important;
+  }
+
+  .shadow-md, .shadow-sm, .shadow-xl, .shadow-lg {
+    box-shadow: none !important;
+    border: 1px solid rgba(0,0,0,0.1) !important;
+  }
+
+  /* Colores de marca forzados para PDF (Azul) */
+  .bg-primary { background-color: #1D4ED8 !important; color: white !important; }
+  .bg-accent { background-color: #3B82F6 !important; color: black !important; }
+  .bg-primary\/5 { background-color: rgba(29, 78, 216, 0.05) !important; }
+  .bg-accent\/5 { background-color: rgba(59, 130, 246, 0.05) !important; }
+  .text-primary { color: #1D4ED8 !important; }
+  .text-blue-800 { color: #2563EB !important; }
+  .text-blue-900 { color: #1E3A8A !important; }
+  
+  main {
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+  }
+
+  .card {
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 0.5rem !important;
+    overflow: hidden !important;
+  }
+
+  .recharts-responsive-container {
+    height: 250px !important;
+    width: 100% !important;
+  }
+}

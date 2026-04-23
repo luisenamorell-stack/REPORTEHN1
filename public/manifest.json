@@ -1,0 +1,23 @@
+{
+  "name": "ReporteHN",
+  "short_name": "ReporteHN",
+  "description": "Sistema profesional de gestión de carteras y reconciliación de tarjetas.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#EFF6FF",
+  "theme_color": "#1D4ED8",
+  "icons": [
+    {
+      "src": "https://picsum.photos/seed/reportehn/192/192",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://picsum.photos/seed/reportehn/512/512",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
